@@ -2,6 +2,8 @@
 
 angular.module('myApp', []).controller('createCvCtrl', ['$scope', function($scope) {
 
+  $scope.rubriques = ['Ajouter CV', 'Visionner CV', 'A propos', 'Contact'];
+
   $scope.user = {
       id: 1,
     firstname: 'AHMED',

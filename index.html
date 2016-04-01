@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="myApp" ><head>
+<html lang="en" ng-app="myApp" ><head  ng-controller="createCvCtrl">
 
   <meta http-equiv="content-type" content="text/html; charset=UTF-8">
   <meta charset="utf-8">
@@ -7,6 +7,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>CV Kefi Ahmed </title>
+   <!--<ul class="nav nav-pills nav-stacked"">
+ <li ng-repeat= "rub in rubriques">           <a ng-href="#{{rub}}">{{rub}}</a>        </li>
+  </ul>]-->
 
   <!--[if lt IE 9]>
   <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
@@ -114,7 +117,7 @@
     <p><strong>{{user.loisir}}</p>
     <p><strong>Association :</strong> {{user.association}}</p>
   </div>
-
+<br><br><br>
   <!-- Contact -->
   <div class="grid_8 contact">
     <h3>Contact</h3>
@@ -139,4 +142,5 @@
 
 <script src="angular.min.js"></script>  <!-- added the angular js -->
 <script src="app.js"></script>
+<script src="bootstrap/js/bootstrap.min.js"></script>
 </body></html>
