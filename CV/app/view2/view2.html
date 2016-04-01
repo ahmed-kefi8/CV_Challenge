@@ -25,13 +25,15 @@
 
 <!-- Header -->
 <header role="banner">
-  <div class="container_16" ng-controller="View2Ctrl">
+  <div class="container_16" >
     <hgroup>
       <form>
+          <div ng-controller="View2Ctrl">
         First name:<br>
-        <input ng-model="firstname" type="text" name="firstname"> <br>
+        <input ng-model="user.firstname" type="text" name="firstname"> <br>  Hello <span ng-bind="user.firstname"></span>!
         Last name:<br>
-        <input ng-model="lastname" type="text" name="lastname">
+        <input ng-model="user.lastname" type="text" name="lastname">
+          </div>
       </form>
     </hgroup>
 
@@ -147,7 +149,8 @@
     </ul>
   </div>
 </section>
-<script src="angular.min.js"></script> // added the angular js
+<script src="angular.min.js"></script>  <!-- added the angular js -->
+<script src="view2.js"></script>
 <!-- Scripts JavaScript -->
 <script src="Sheldon%20COOPER%20-%20Physicien%20surdou%C3%A9%20et%20Geek%20qualifi%C3%A9_files/jquery-1.js"></script>
 <script src="Sheldon%20COOPER%20-%20Physicien%20surdou%C3%A9%20et%20Geek%20qualifi%C3%A9_files/validate.js"></script>
