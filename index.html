@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>CV Form</title>
+  <title>CV Kefi Ahmed </title>
 
   <!--[if lt IE 9]>
   <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
@@ -22,23 +22,18 @@
   <link rel="stylesheet" media="print" href="template/print.css">
 </head>
 
-<body >
+<body ng-controller="createCvCtrl">
 
 <!-- Header -->
-<header role="banner">
-  <div class="container_16">
-    <hgroup>
-      <form>
-          <div ng-controller="createCvCtrl">
-
-              Hello {{user.firstname}} </div>
-        First name:<br>
-        <input ng-model="user.firstname" type="text" name="firstname"> <br>
-        Last name:<br>
-        <input ng-model="user.lastname" type="text" name="lastname">
-
-      </form>
-    </hgroup>
+  <header role="banner">
+    <div class="container_16">
+     <div >
+        <hgroup>
+          <h1>{{user.firstname}} {{user.lastname}}</h1>
+          <h2>{{user.apropos}}</h2> 
+		  <h2>{{user.apropos1}}</h
+        </hgroup>
+        </div>
 
     <figure>
       <img src="template/avatar.jpg" alt="Sheldon COOPER">
@@ -67,27 +62,26 @@
 <!-- Corps -->
 <section role="main" class="container_16 clearfix">
   <div class="grid_16">
-    <!-- A propos -->
-    <div class="grid_8 apropos">
-      <h3>A propos</h3>
-      <p>Cette section vous sert de présentation.</p>
-      <textarea  ng-model="apropos" rows="8" cols="50">
-        </textarea>
-    </div>
-
-    <!-- Compétences -->
-    <div class="grid_8 competences">
-      <h3>Compétences</h3>
-      <ul class="barres">
-        <li data-skills="80">Compétences 1<input ng-model="compt1" type="text" name="compt1"></li>
-        <li data-skills="60">Compétences 2<input ng-model="compt2" type="text" name="compt2"></li>
-        <li data-skills="75">Compétences 3<input ng-model="compt3"type="text" name="compt3"></li>
-        <li data-skills="40">Compétences 4<input ng-model="compt4" type="text" name="compt4"></li>
-        <li data-skills="95">Compétences 5<input ng-model="compt5" type="text" name="compt5"></li>
-      </ul>
-    </div>
-  </div>
-
+			<!-- A propos -->
+			<div class="grid_8 apropos">
+				<h3>A propos</h3>
+				<p>Cette section vous sert de présentation.</p>
+				<p>{{user.presentation}}</p>
+			</div>
+			
+			<!-- Compétences -->
+			<div class="grid_8 competences">
+				<h3>Compétences</h3>
+				<ul class="barres">
+					<li data-skills="80">Compétences 1 : {{user.compt1}}<span style="width: 80%;"></span></li>
+					<li data-skills="60">Compétences 2 : {{user.compt2}}<span style="width: 80%;"></span></li>
+					<li data-skills="75">Compétences 3 : {{user.compt3}}<span style="width: 85%;"></span></li>
+					<li data-skills="40">Compétences 4 : {{user.compt4}}<span style="width: 70%;"></span></li>
+					<li data-skills="95">Compétences 5 : {{user.compt5}}<span style="width: 90%;"></span></li>
+				</ul>
+			</div>
+		</div>
+		
   <!-- Expériences -->
   <div class="grid_16 experiences">
     <h3>Expériences</h3>
@@ -147,8 +141,7 @@
       <li class="phone">06 00 00 00 00</li>
       <li class="mail"><a href="mailto:mon.adresse@email.fr">mon.adresse@email.fr</a></li>
       <li class="site"><a href="http://www.mon-site.fr/">www.mon-site.fr</a></li>
-      <li class="form"><a class="toContactform">via le formulaire de contact</a></li>
-      <li class="form"><a class="toContactform">via le formulaire de contact</a></li>
+
     </ul>
   </div>
 
