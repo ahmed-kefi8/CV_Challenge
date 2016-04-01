@@ -87,20 +87,10 @@
     <h3>Expériences</h3>
     <ul>
       <li>
-        <h4><strong>Nom du poste</strong> chez nom de l'employeur</h4>
-        <span class="lieu">Lieu</span>
-        <span class="dates">Dates</span>
-        <p>Une petite description du poste, décrivez votre rôle et vos
-          tâches en quelques mots afin que le recruteur en sache plus sur la
-          nature de votre travail.</p>
-      </li>
-      <li>
-        <h4><strong>Nom du poste</strong> chez nom de l'employeur</h4>
-        <span class="lieu">Lieu</span>
-        <span class="dates">Dates</span>
-        <p>Une petite description du poste, décrivez votre rôle et vos
-          tâches en quelques mots afin que le recruteur en sache plus sur la
-          nature de votre travail.</p>
+        <h4><strong>{{user.poste}}</strong> {{user.employeur}}</h4>
+        <span class="lieu">{{user.lieu}}</span>
+        <span class="dates">{{user.duree}}</span>
+        <p>{{user.descr}}</p>
       </li>
     </ul>
   </div>
@@ -110,16 +100,10 @@
     <h3>Formations</h3>
     <ul>
       <li>
-        <h4><strong>Nom de la formation : / diplôme</strong> à nom de l'école</h4>
-        <span class="lieu">Lieu</span>
-        <span class="dates">Période</span>
-        <p>Clarifiez la formation (les abréviations ne sont pas connues de tout le monde).</p>
-      </li>
-      <li>
-        <h4><strong>Nom de la formation / diplôme</strong> à nom de l'école</h4>
-        <span class="lieu">Lieu</span>
-        <span class="dates">Période</span>
-        <p>Clarifiez la formation (les abréviations ne sont pas connues de tout le monde).</p>
+        <h4><strong>{{user.diplome}}</strong> {{user.ecole}}</h4>
+        <span class="lieu">{{user.lieuDip}}</span>
+        <span class="dates">{{user.annee}}</span>
+        <p>{{user.descrDiplome}}</p>
       </li>
     </ul>
   </div>
@@ -127,9 +111,8 @@
   <!-- Loisirs -->
   <div class="grid_8 loisirs">
     <h3>Loisirs</h3>
-    <p><strong>Sports :</strong> si vous en pratiquez</p>
-    <p><strong>Association :</strong> si vous êtes membre d'une association</p>
-    <p>D'autres loisirs plus vagues, complétez ici.</p>
+    <p><strong>{{user.loisir}}</p>
+    <p><strong>Association :</strong> {{user.association}}</p>
   </div>
 
   <!-- Contact -->
@@ -137,10 +120,9 @@
     <h3>Contact</h3>
     <p>Si mon profil vous intéresse, n'hésitez pas à me contacter :</p>
     <ul>
-      <li class="lieu">Paris, France</li>
-      <li class="phone">06 00 00 00 00</li>
-      <li class="mail"><a href="mailto:mon.adresse@email.fr">mon.adresse@email.fr</a></li>
-      <li class="site"><a href="http://www.mon-site.fr/">www.mon-site.fr</a></li>
+      <li class="lieu">Tunisie</li>
+      <li class="phone">{{user.phone}}</li>
+      <li class="mail"><a href="mailto:mon.adresse@email.fr">{{user.email}}</a></li>
 
     </ul>
   </div>
