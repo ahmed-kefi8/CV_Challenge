@@ -62,25 +62,25 @@
 /* Header
 **********/
 	header[role=banner] {
-		background:#fff;
+		background:#b9caf0;
 		border-bottom:4px solid #33a4c9;
 		padding: 19px 0;
 		overflow: hidden;
 	}
 	
 	header figure {
-		border: 3px solid #eee;
+		border: 3px solid #fff;
 		border-radius: 78px;
 		float: right;
-		height: 156px;
-		width: 156px;
+		height: 200px;
+		width: 200px;
 	}
 	
 	header figure img {
 		border-radius: 75px;
-		height: 150px;
+		height: 200px;
 		position: relative;
-		width: 150px;
+		width: 200px;
 	}
 	
 	header hgroup {
@@ -90,12 +90,12 @@
 	
 	header hgroup h1 {
 		color:#555;
-		font-family:'DroidSansBold', Arial, sans-serif;
+		font-family:Lucida Bright,Georgia,serif;
 	}
 	
 	header hgroup h2 {
-		color:#cecece;
-		font-style: italic;
+		color:#223e7a;
+		font-style: Lucida Bright,Georgia,serif;;
 		text-shadow: 1px 1px 0 rgba(0,0,0,.3);
 	}
 
