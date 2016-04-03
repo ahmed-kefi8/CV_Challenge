@@ -1,146 +1,43 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="myApp" ><head  ng-controller="createCvCtrl">
+<html ng-app="CVapp" >
+<head>
+<!-- Scripts JavaScript -->
+<script src="template/jquery-1.js"></script>
+<script src="template/validate.js"></script>
+<script src="template/plugins.js"></script>
+<script src="angular.min.js"></script>  <!-- added the angular js -->
+<script src="app.js"></script>
+<script src="angular-route.js"></script>
 
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
   <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
   <title>CV Kefi Ahmed </title>
-   <!--<ul class="nav nav-pills nav-stacked"">
- <li ng-repeat= "rub in rubriques">           <a ng-href="#{{rub}}">{{rub}}</a>        </li>
-  </ul>]-->
 
-  <!--[if lt IE 9]>
-  <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
-  <![endif]-->
+
+
 
   <!-- Fichiers CSS -->
   <link rel="stylesheet" href="template/reset.css">
-  <!--[if lt IE 9]>
-  <link rel="stylesheet" href="css/cv.css" media="screen">
-  <![endif]-->
+
+  <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
   <link rel="stylesheet" media="screen and (max-width:480px)" href="template/mobile.css">
   <link rel="stylesheet" media="screen and (min-width:481px)" href="template/cv.css">
   <link rel="stylesheet" media="print" href="template/print.css">
 </head>
 
-<body ng-controller="createCvCtrl">
 
-<!-- Header -->
-  <header role="banner">
-    <div class="container_16">
-     <div >
-        <hgroup>
-          <h1>{{user.firstname}} {{user.lastname}}</h1>
-          <h2>{{user.apropos}}</h2> 
-		  <h2>{{user.apropos1}}</h
-        </hgroup>
-        </div>
-
-    <figure>
-      <img src="template/avatar.jpg" alt="Sheldon COOPER">
-    </figure>
-  </div>
-</header>
-
-<!-- Contact -->
-<section class="contactform clearfix">
-  <div class="container_16">
-    <h3>Contactez-moi</h3>
-    <p>Remplissez le formulaire ci-dessous afin de m'envoyer un message. Je vous répondrais dans les plus bref délai.
-      <br><em>Tous les champs sont requis.</em></p>
-    <form novalidate="novalidate" method="post" action="#" name="contact" class="grid_16">
-      <p class="grid_10"><textarea name="message" placeholder="Votre message" class="required"></textarea></p>
-      <p class="grid_6">
-        <input name="nom" placeholder="Nom - Prénom" class="required" type="text">
-        <input name="email" placeholder="Adresse email" class="required" type="email">
-        <input name="envoi" value="Envoyer le message" class="required" type="submit">
-        <span class="messageform"></span>
-      </p>
-    </form>
-  </div>
-</section>
-
-<!-- Corps -->
-<section role="main" class="container_16 clearfix">
-  <div class="grid_16">
-			<!-- A propos -->
-			<div class="grid_8 apropos">
-				<h3>A propos</h3>
-				<p>Cette section vous sert de présentation.</p>
-				<p>{{user.presentation}}</p>
-			</div>
-			
-			<!-- Compétences -->
-			<div class="grid_8 competences">
-				<h3>Compétences</h3>
-				<ul class="barres">
-					<li data-skills="80">Compétences 1 : {{user.compt1}}<span style="width: 80%;"></span></li>
-					<li data-skills="60">Compétences 2 : {{user.compt2}}<span style="width: 80%;"></span></li>
-					<li data-skills="75">Compétences 3 : {{user.compt3}}<span style="width: 85%;"></span></li>
-					<li data-skills="40">Compétences 4 : {{user.compt4}}<span style="width: 70%;"></span></li>
-					<li data-skills="95">Compétences 5 : {{user.compt5}}<span style="width: 90%;"></span></li>
-				</ul>
-			</div>
-		</div>
-		
-  <!-- Expériences -->
-  <div class="grid_16 experiences">
-    <h3>Expériences</h3>
-    <ul>
-      <li>
-        <h4><strong>{{user.poste}}</strong> {{user.employeur}}</h4>
-        <span class="lieu">{{user.lieu}}</span>
-        <span class="dates">{{user.duree}}</span>
-        <p>{{user.descr}}</p>
-      </li>
+<body ng-controller="homeCtrl">
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <ul class="nav navbar-nav">
+      <li class="active"><a href="#home" >Home</a></li>
+      <li><a href="#Visionner_CV">Visionner CV</a></li>
+      <li><a href="#Ajouter_CV">Ajouter CV</a></li>
     </ul>
   </div>
+</nav>
 
-  <!-- Formations -->
-  <div class="grid_16 formations">
-    <h3>Formations</h3>
-    <ul>
-      <li>
-        <h4><strong>{{user.diplome}}</strong> {{user.ecole}}</h4>
-        <span class="lieu">{{user.lieuDip}}</span>
-        <span class="dates">{{user.annee}}</span>
-        <p>{{user.descrDiplome}}</p>
-      </li>
-    </ul>
-  </div>
+<div ng-view></div>
 
-  <!-- Loisirs -->
-  <div class="grid_8 loisirs">
-    <h3>Loisirs</h3>
-    <p><strong>{{user.loisir}}</p>
-    <p><strong>Association :</strong> {{user.association}}</p>
-  </div>
-<br><br><br>
-  <!-- Contact -->
-  <div class="grid_8 contact">
-    <h3>Contact</h3>
-    <p>Si mon profil vous intéresse, n'hésitez pas à me contacter :</p>
-    <ul>
-      <li class="lieu">Tunisie</li>
-      <li class="phone">{{user.phone}}</li>
-      <li class="mail"><a href="mailto:mon.adresse@email.fr">{{user.email}}</a></li>
 
-    </ul>
-  </div>
 
-</section>
-
-<!-- Scripts JavaScript -->
-<script src="template/jquery-1.js"></script>
-<script src="template/validate.js"></script>
-<!--[if lt IE 9]>
-<script src="scripts/placeholder.js"></script>
-<![endif]-->
-<script src="template/plugins.js"></script>
-
-<script src="angular.min.js"></script>  <!-- added the angular js -->
-<script src="app.js"></script>
-<script src="bootstrap/js/bootstrap.min.js"></script>
 </body></html>

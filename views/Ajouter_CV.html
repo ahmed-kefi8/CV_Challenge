@@ -1,0 +1,107 @@
+<!-- Contact -->
+
+
+<section class="contactform clearfix" ng-controller="Ajouter_CvCtrl">
+  <div class="container_16">
+    <h3>Contactez-moi</h3>
+    <p>Remplissez le formulaire ci-dessous afin de m'envoyer un message. Je vous répondrais dans les plus bref délai.
+      <br><em>Tous les champs sont requis.</em></p>
+    <form novalidate="novalidate" method="post" action="#" name="contact" class="grid_16">
+      <p class="grid_10"><textarea name="message" placeholder="Votre message" class="required"></textarea></p>
+      <p class="grid_6">
+        <input name="nom" placeholder="Nom - Prénom" class="required" type="text">
+        <input name="email" placeholder="Adresse email" class="required" type="email">
+        <input name="envoi" value="Envoyer le message" class="required" type="submit">
+        <span class="messageform"></span>
+      </p>
+    </form>
+  </div>
+</section>
+<!-- Header -->
+  <header role="banner">
+    <div class="container_16">
+     <div >
+        <hgroup>
+          <h1>{{user.firstname}} {{user.lastname}}</h1>
+          <h2>{{user.apropos}}</h2> 
+      <h2>{{user.apropos1}}</h
+        </hgroup>
+        </div>
+
+    <figure>
+      <img src="template/avatar.jpg" alt="Sheldon COOPER">
+    </figure>
+  </div>
+</header>
+
+
+<!-- Corps -->
+<section role="main" class="container_16 clearfix">
+  <div class="grid_16">
+      <!-- A propos -->
+      <div class="grid_8 apropos">
+        <h3>A propos</h3>
+        <p>Cette section vous sert de présentation.</p>
+        <p>{{user.presentation}}</p>
+      </div>
+      
+      <!-- Compétences -->
+      <div class="grid_8 competences">
+        <h3>Compétences</h3>
+        <ul class="barres">
+          <li data-skills="80">Compétences 1 : {{user.compt1}}<span style="width: 80%;"></span></li>
+          <li data-skills="60">Compétences 2 : {{user.compt2}}<span style="width: 80%;"></span></li>
+          <li data-skills="75">Compétences 3 : {{user.compt3}}<span style="width: 85%;"></span></li>
+          <li data-skills="40">Compétences 4 : {{user.compt4}}<span style="width: 70%;"></span></li>
+          <li data-skills="95">Compétences 5 : {{user.compt5}}<span style="width: 90%;"></span></li>
+        </ul>
+      </div>
+    </div>
+    
+  <!-- Expériences -->
+  <div class="grid_16 experiences">
+    <h3>Expériences</h3>
+    <ul>
+      <li>
+        <h4><strong>{{user.poste}}</strong> {{user.employeur}}</h4>
+        <span class="lieu">{{user.lieu}}</span>
+        <span class="dates">{{user.duree}}</span>
+        <p>{{user.descr}}</p>
+      </li>
+    </ul>
+  </div>
+
+  <!-- Formations -->
+  <div class="grid_16 formations">
+    <h3>Formations</h3>
+    <ul>
+      <li>
+        <h4><strong>{{user.diplome}}</strong> {{user.ecole}}</h4>
+        <span class="lieu">{{user.lieuDip}}</span>
+        <span class="dates">{{user.annee}}</span>
+        <p>{{user.descrDiplome}}</p>
+      </li>
+    </ul>
+  </div>
+
+  <!-- Loisirs -->
+  <div class="grid_8 loisirs">
+    <h3>Loisirs</h3>
+    <p><strong>{{user.loisir}}</p>
+    <p><strong>Association :</strong> {{user.association}}</p>
+  </div>
+<br><br><br>
+  <!-- Contact -->
+  <div class="grid_8 contact">
+    <h3>Contact</h3>
+    <p>Si mon profil vous intéresse, n'hésitez pas à me contacter :</p>
+    <ul>
+      <li class="lieu">Tunisie</li>
+      <li class="phone">{{user.phone}}</li>
+      <li class="mail"><a href="mailto:mon.adresse@email.fr">{{user.email}}</a></li>
+
+    </ul>
+  </div>
+
+</section>
+

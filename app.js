@@ -1,11 +1,43 @@
-'use strict';
+var CVapp = angular.module('CVapp', ['ngRoute']);
 
-angular.module('myApp', []).controller('createCvCtrl', ['$scope', function($scope) {
 
-  $scope.rubriques = ['Ajouter CV', 'Visionner CV', 'A propos', 'Contact'];
+    CVapp.config(function($routeProvider) {
+        $routeProvider
+            .when('/', {
+              redirectTo: 'home'
+            })
+            .when('/home', {
+                templateUrl : 'views/home.html',
+                controller  : 'homeCtrl'
+            })
+
+            .when('/Visionner_CV', {
+                templateUrl : 'views/Visionner_CV.html',
+                controller  : 'Visionner_CvCtrl'
+            })
+
+            .when('/Ajouter_CV', {
+                templateUrl : 'views/Ajouter_CV.html',
+                controller  : 'Ajouter_CVCtrl'
+            });
+
+
+    });
+
+CVapp.controller('homeCtrl', ['$scope', function($scope) {
+
+	
+
+
+	}]);
+
+
+
+
+CVapp.controller('Visionner_CvCtrl', ['$scope', function($scope) {
 
   $scope.user = {
-      id: 1,
+    id: 1,
     firstname: 'AHMED',
     lastname: 'KEFI',
     apropos: 'INGENIEUR INFORMATIQUE',
@@ -36,4 +68,9 @@ angular.module('myApp', []).controller('createCvCtrl', ['$scope', function($scop
   };
 
 
+
 }]);
+
+
+CVapp.controller('Ajouter_CvCtrl', ['$scope', function($scope) {
+	}]);
